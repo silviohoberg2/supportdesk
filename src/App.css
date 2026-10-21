@@ -1,0 +1,253 @@
+/* Hauptbereich */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 25px;
+}
+
+/* Überschriften */
+h1 {
+  color: #1e3a5f;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #243b53;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+/* Hauptbereiche */
+section {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Formular */
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+form>div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+/* Titel über die gesamte Breite */
+form>div:first-child {
+  grid-column: 1 / -1;
+}
+
+/* Beschreibung über die gesamte Breite */
+form>div:has(textarea) {
+  grid-column: 1 / -1;
+}
+
+/* Erfolgsmeldung und Fehlermeldung */
+form>p {
+  grid-column: 1 / -1;
+}
+
+/* Formularbutton */
+form>button {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 600;
+  color: #334155;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: white;
+  color: #1e293b;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #3b82f6;
+  border-color: #3b82f6;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+button {
+  padding: 11px 18px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Ticketkarten */
+.ticket-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #94a3b8;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Statusfarben */
+.ticket-card.open {
+  border-left-color: #ef4444;
+}
+
+.ticket-card.processing {
+  border-left-color: #f59e0b;
+}
+
+.ticket-card.closed {
+  border-left-color: #22c55e;
+}
+
+/* Ticketüberschrift */
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.ticket-header h3 {
+  margin: 0;
+}
+
+/* Statusanzeige */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.status-badge.open {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-badge.processing {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.closed {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+/* Ticketinformationen */
+.ticket-card p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Aktionen */
+.ticket-actions {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.ticket-actions div {
+  flex: 1;
+  min-width: 0;
+}
+
+.ticket-actions select {
+  margin-top: 5px;
+}
+
+/* Löschen-Button */
+.delete-button {
+  background-color: #dc2626;
+}
+
+.delete-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Responsive Darstellung */
+@media (max-width: 768px) {
+  main {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form>div:first-child,
+  form>div:has(textarea),
+  form>p,
+  form>button {
+    grid-column: 1;
+  }
+
+  .ticket-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ticket-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ticket-actions div {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}

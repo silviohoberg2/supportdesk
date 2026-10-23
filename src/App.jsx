@@ -1,5 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 import TicketForm from "./components/TicketForm.jsx";
 import TicketFilter from "./components/TicketFilter.jsx";
 import TicketList from "./components/TicketList.jsx";
@@ -169,8 +171,7 @@ function App() {
 
   return (
     <main>
-      <h1>SupportDesk</h1>
-      <h2>Support-Tickets</h2>
+      <Header />
 
       <section>
         <h2>Ticketstatistik</h2>
@@ -205,6 +206,8 @@ function App() {
         onDeleteTicket={handleDeleteTicket}
         onEditTicket={handleEditTicket}
       />
+
+      <Footer />
     </main>
   );
 }

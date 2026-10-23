@@ -1,3 +1,4 @@
+
 /* Hauptbereich */
 #root {
   width: 100%;
@@ -27,6 +28,27 @@ h3 {
   margin-bottom: 10px;
 }
 
+/* Header */
+.app-header {
+  background-color: #1e3a5f;
+  color: white;
+  padding: 30px 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.app-header h1 {
+  color: white;
+  margin: 0 0 10px;
+}
+
+.app-header p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 16px;
+}
+
 /* Hauptbereiche */
 section {
   background-color: white;
@@ -43,7 +65,7 @@ form {
   gap: 15px;
 }
 
-form>div {
+form > div {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -51,22 +73,22 @@ form>div {
 }
 
 /* Titel über die gesamte Breite */
-form>div:first-child {
+form > div:first-child {
   grid-column: 1 / -1;
 }
 
 /* Beschreibung über die gesamte Breite */
-form>div:has(textarea) {
+form > div:has(textarea) {
   grid-column: 1 / -1;
 }
 
 /* Erfolgsmeldung und Fehlermeldung */
-form>p {
+form > p {
   grid-column: 1 / -1;
 }
 
 /* Formularbutton */
-form>button {
+form > button {
   grid-column: 1 / -1;
 }
 
@@ -207,6 +229,26 @@ button:hover {
   background-color: #b91c1c;
 }
 
+/* Footer */
+.app-footer {
+  background-color: #1e3a5f;
+  color: #ffffff;
+  padding: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.app-footer p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.app-footer p:last-child {
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
 /* Responsive Darstellung */
 @media (max-width: 768px) {
   main {
@@ -222,14 +264,22 @@ button:hover {
     font-size: 26px;
   }
 
+  .app-header {
+    padding: 22px 15px;
+  }
+
+  .app-footer {
+    padding: 18px 12px;
+  }
+
   form {
     grid-template-columns: 1fr;
   }
 
-  form>div:first-child,
-  form>div:has(textarea),
-  form>p,
-  form>button {
+  form > div:first-child,
+  form > div:has(textarea),
+  form > p,
+  form > button {
     grid-column: 1;
   }
 
